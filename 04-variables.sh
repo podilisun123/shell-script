@@ -1,4 +1,4 @@
 #!/bin/bash
-read -p "enter username:\n" UNAME
-read -s -p "enter password:\n" PASSWD
-echo "The username is ${UNAME}\n and password is ${PASSWD}"
+read -p -e "enter username:\n" UNAME
+read -s -p -e "enter password:\n" PASSWD
+echo -e "The username is ${UNAME}\n and password is ${PASSWD}"
