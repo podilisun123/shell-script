@@ -2,6 +2,11 @@ USER=$(id -u)
 TIME_STAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d ".",-1f)
 LOGFILE=/tmp/${SCRIPT_NAME}-${LOGFILE}.log
+
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 if [ $USER -ne 0 ]
 then
     echo "you should root privilage"
@@ -19,12 +24,12 @@ validate(){
 }
 for i in $@
 do 
-    dnf list installed $i -y
+    dnf list installed $i -y &>>$LOGFILE
     if [ $? -eq 0 ]
     then
         echo -e "$i is already installed ..$Y SKIPPING $N"
     else
-        dnf install $i -y
+        dnf install $i -y &>>$LOGFILE
         validate $? "$i installtion"
     fi
 done
