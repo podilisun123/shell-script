@@ -15,6 +15,7 @@ validate(){
         echo -e "$2 installation ..$R failure $N"
     else
         echo -e "$2 installation ..$G sucess $N"
+    fi
 }
 for i in $@
 do 
