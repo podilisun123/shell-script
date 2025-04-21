@@ -23,7 +23,6 @@ do
     if [ $? -eq 0 ]
     then
         echo -e "$i is already installed ..$Y SKIPPING $N"
-        exit 1
     else
         dnf install $i -y
         validate $? "$i installtion"
