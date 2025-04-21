@@ -23,5 +23,5 @@ then
     echo "installed failed...."
     exit 1
 else
-    echo "installed sunccess...
+    echo "installed sunccess..."
 fi
