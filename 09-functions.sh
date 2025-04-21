@@ -1,5 +1,5 @@
 USER=$(id -u)
-TIME_STAMP=$(date +date +%F-%H-%M-%S)
+TIME_STAMP=$(date +%F-%H-%M-%S)
 SCRIPT_FILE=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/${SCRIPT_FILE}-${TIME_STAMP}.log
 
