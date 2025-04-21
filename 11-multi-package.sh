@@ -28,3 +28,4 @@ do
         dnf install $i -y
         validate $? "$i installtion"
     fi
+done
