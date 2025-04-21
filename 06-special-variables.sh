@@ -5,3 +5,5 @@ echo "all arguments:" $@
 echo "home directory" $HOME 
 echo "current dierctory:" $PWD 
 echo "process id " $$
+sleep 60
+echo "background process:" $!
