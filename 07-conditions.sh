@@ -1,7 +1,7 @@
 #!/bin/bash
 read -p "enter number1:" NUMBER1
 
-if [ $NUMBER1 -ge 10 ]
+if [ $NUMBER1 -gt 10 ]
 then 
     echo "your entered number is ${NUMBER1} greater than 10 "
 else
