@@ -24,7 +24,7 @@ validate(){
 }
 for i in $@
 do 
-    dnf list installed $i -y &>>$LOGFILE
+    dnf list installed $i  &>>$LOGFILE
     if [ $? -eq 0 ]
     then
         echo -e "$i is already installed ..$Y SKIPPING $N"
