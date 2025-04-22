@@ -1,7 +1,7 @@
 #!/bin/bash
 USER=$(id -u)
 TIME_STAMP=$(date +%F-%H-%M-%S)
-SCRIPT_NAME=$(echo $0 | cut -d "." -1f)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/${SCRIPT_NAME}-${TIME_STAMP}.log
 
 read  -s -p "enter db password:" DB_PASSWORD 
@@ -35,7 +35,7 @@ systemctl start mysqld &>>$LOGFILE
 validate $? "starting mysql"
 
 
-mysql -h db.sundardev.online -u root -p${DB_PASSWORD} -e show databases; &>>$LOGFILE
+mysql -h db.sundardev.online -uroot -p${DB_PASSWORD} -e show databases; &>>$LOGFILE
 if [ $? -ne 0 ]
 then 
     mysql_secure_installation --set-root-pass ${DB_PASSWORD} &>>$LOGFILE
