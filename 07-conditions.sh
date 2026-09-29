@@ -7,4 +7,4 @@ then
 else
     echo "your entered number is ${NUMBER1} less than 10"
 fi
-echo "the name of arguments are:" $@
+echo "the name of arguments are:" $#
