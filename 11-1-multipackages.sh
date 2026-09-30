@@ -22,5 +22,14 @@ validate(){
         echo -e "$2 is $G SUCESS $N"
     fi
 }
-dnf install git -y &>>$LOGFILE
-validate $? "install git"
+for i in $@
+do
+    dnf list installed $i
+    if [ $? -eq 0 ]
+    then
+        echo "$i already installed $Y SKIPPING $N"
+    else
+        dnf install $i -y
+        validate $1 "install $i"
+    fi
+done
