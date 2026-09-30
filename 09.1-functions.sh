@@ -19,6 +19,7 @@ validate(){
         echo -e "$2 is $RFAILED......$N"
     else
         echo -e "$2 is $G SUCESS.....$N"
+    fi
 }
 dnf install mysql &>>$LOGFILE
 validate $? ${install mysql}
