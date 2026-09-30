@@ -2,7 +2,7 @@
 USER=$(id -u)
 TIME_STAMP=$(date +%F-%H-%M-%S)
 SCRIPT_FILE=$(echo $0 | cut -d "." -f1 )
-LOGFILE=/tmp/$SCRIPT_FILE-$TIME_STAMP.log
+LOGFILE=/tmp/${SCRIPT_FILE}-${TIME_STAMP}.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -21,7 +21,7 @@ validate(){
         echo -e "$2 is $G SUCESS.....$N"
     fi
 }
-dnf install mysql &>>$LOGFILE
-validate $? "install mysql"
+# dnf install mysql &>>$LOGFILE
+# validate $? "install mysql"
 dnf install dockerrr &>>$LOGFILE
 validate $? "install docker"
