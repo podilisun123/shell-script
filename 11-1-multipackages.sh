@@ -20,6 +20,7 @@ validate(){
         echo -e "$2 is install $R FAILED$N"
     else
         echo -e "$2 is $G SUCESS $N"
+    fi
 }
 dnf install git -y &>>$LOGFILE
 validate $? "install git"
