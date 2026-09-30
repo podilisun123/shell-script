@@ -16,12 +16,12 @@ fi
 validate(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 is $RFAILED......$N"
+        echo -e "$2 is $R FAILED......$N"
     else
         echo -e "$2 is $G SUCESS.....$N"
     fi
 }
 dnf install mysql &>>$LOGFILE
-validate $? ${install mysql}
+validate $? "install mysql"
 dnf install dockerrr &>>$LOGFILE
-validate $? ${install docker}
+validate $? "install docker"
